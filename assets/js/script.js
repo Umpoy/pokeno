@@ -15,6 +15,7 @@ function create_board() {
 
 function assign_click_handler() {
     $('.box').on('click', picked_number);
+    $('.play').on('click', generate_winning_numbers);
 }
 
 function picked_number() {
@@ -50,5 +51,5 @@ function select_winning_numbers(array) {
         }
         $('.box:nth-child(' + array[0] + ')').addClass('selected')
         array.shift();
-    }, 100)
+    }, 250)
 }
