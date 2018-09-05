@@ -18,14 +18,14 @@ function assign_click_handler() {
 }
 
 function select_number() {
+    if ($(this).hasClass('selected')) {
+        user_count--
+        $(this).removeClass('selected');
+        return
+    }
     if (user_count < 10) {
         user_count++
         $(this).addClass('selected')
-    } else {
-        if ($(this).hasClass('selected')) {
-            user_count--
-            $(this).removeClass('selected');
-        }
     }
 }
 
