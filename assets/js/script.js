@@ -18,15 +18,24 @@ function assign_click_handler() {
 }
 
 function select_number() {
-
     if (user_count < 10) {
         user_count++
         $(this).addClass('selected')
-        console.log(user_count)
     } else {
         if ($(this).hasClass('selected')) {
             user_count--
             $(this).removeClass('selected');
         }
     }
+}
+
+function generate_winning_numbers() {
+    var winning_numbers = [];
+    while (winning_numbers.length < 20) {
+        var hold = Math.ceil(Math.random() * 80)
+        if (!winning_numbers.includes(hold)) {
+            winning_numbers.push(hold);
+        }
+    }
+    console.log(winning_numbers.sort(function (a, b) { return a - b }))
 }
