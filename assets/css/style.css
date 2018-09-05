@@ -5,3 +5,17 @@
 body {
     background-color: pink;
 }
+
+.game {
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 50vh;
+    width: 60vw;
+}
+
+.box {
+    height: 12.5%;
+    width: 10%;
+    border: 1px solid black;
+    display: inline-block;
+}
