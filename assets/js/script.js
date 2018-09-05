@@ -14,18 +14,18 @@ function create_board() {
 }
 
 function assign_click_handler() {
-    $('.box').on('click', select_number);
+    $('.box').on('click', picked_number);
 }
 
-function select_number() {
-    if ($(this).hasClass('selected')) {
+function picked_number() {
+    if ($(this).hasClass('picked')) {
         user_count--
-        $(this).removeClass('selected');
+        $(this).removeClass('picked');
         return
     }
     if (user_count < 10) {
         user_count++
-        $(this).addClass('selected')
+        $(this).addClass('picked')
     }
 }
 

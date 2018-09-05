@@ -24,6 +24,17 @@
     display: inline-block;
 }
 
-.selected{
-    background-color: red;
+.picked {
+    background-image: url('../img/pokeball.svg');
+    background-repeat: no-repeat;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0%;
+}
+
+.play {
+    position: absolute;
+    right: 0;
 }
