@@ -1,4 +1,5 @@
 let user_count = 0
+let user_numbers = [];
 
 $(document).ready(initialize);
 
@@ -22,11 +23,15 @@ function picked_number() {
     if ($(this).hasClass('picked')) {
         user_count--
         $(this).removeClass('picked');
+        user_numbers.splice(user_numbers[user_numbers.indexOf($(this).html)], 1)
+        console.log(user_numbers)
         return
     }
     if (user_count < 10) {
         user_count++
         $(this).addClass('picked')
+        user_numbers.push($(this).html());
+        console.log(user_numbers)
     }
 }
 
