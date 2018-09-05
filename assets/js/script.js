@@ -30,6 +30,7 @@ function select_number() {
 }
 
 function generate_winning_numbers() {
+    $('.box').off("click");
     var winning_numbers = [];
     while (winning_numbers.length < 20) {
         var hold = Math.ceil(Math.random() * 80)
