@@ -8,7 +8,7 @@ function initialize() {
 }
 
 function create_board() {
-    for (var i = 1; i < 81; i++) {
+    for (let i = 1; i < 81; i++) {
         $('<div>').addClass('box').html(i).appendTo('.game')
     }
 }
@@ -31,12 +31,24 @@ function picked_number() {
 
 function generate_winning_numbers() {
     $('.box').off("click");
-    var winning_numbers = [];
+    let winning_numbers = [];
     while (winning_numbers.length < 20) {
-        var hold = Math.ceil(Math.random() * 80)
+        let hold = Math.ceil(Math.random() * 80)
         if (!winning_numbers.includes(hold)) {
             winning_numbers.push(hold);
         }
     }
-    console.log(winning_numbers.sort(function (a, b) { return a - b }))
+    select_winning_numbers(winning_numbers);
+    //console.log(winning_numbers.sort(function (a, b) { return a - b }))
+}
+
+function select_winning_numbers(array) {
+    const interval = setInterval(function () {
+        if (array.length === 0) {
+            clearInterval(interval);
+            return
+        }
+        $('.box:nth-child(' + array[0] + ')').addClass('selected')
+        array.shift();
+    }, 100)
 }

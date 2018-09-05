@@ -29,6 +29,10 @@
     background-repeat: no-repeat;
 }
 
+.selected {
+    background-color: red;
+}
+
 .footer {
     position: absolute;
     bottom: 0%;
