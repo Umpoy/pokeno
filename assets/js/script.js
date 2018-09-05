@@ -1,3 +1,5 @@
+let user_count = 0
+
 $(document).ready(initialize);
 
 function initialize() {
@@ -16,9 +18,15 @@ function assign_click_handler() {
 }
 
 function select_number() {
-    if ($(this).hasClass('selected')) {
-        $(this).removeClass('selected')
-    } else {
+
+    if (user_count < 10) {
+        user_count++
         $(this).addClass('selected')
+        console.log(user_count)
+    } else {
+        if ($(this).hasClass('selected')) {
+            user_count--
+            $(this).removeClass('selected');
+        }
     }
 }
