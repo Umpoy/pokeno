@@ -8,6 +8,7 @@ function initialize() {
     create_board();
     assign_click_handler();
     render_DOM();
+    give_credit();
 }
 
 function create_board() {
@@ -64,7 +65,6 @@ function generate_winning_numbers() {
 }
 
 function select_winning_numbers(array) {
-
     const hold_array = array.slice();
     const interval = setInterval(function () {
         if (hold_array.length === 0) {
@@ -271,7 +271,13 @@ function quick_pick() {
     erase_picks();
     user_count = 0
     user_numbers = [];
+}
 
+function give_credit() {
+    setInterval(function () {
+        user_money++;
+        render_DOM();
+    }, 60000)
 }
 
 function render_DOM() {
