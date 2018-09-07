@@ -19,6 +19,8 @@ function create_board() {
 function assign_click_handler() {
     $('.box').on('click', picked_number);
     $('.play').on('click', generate_winning_numbers);
+    $('.erase').on('click', erase_picks);
+    $('.quick').on('click', quick_pick);
 }
 
 function picked_number() {
@@ -46,7 +48,8 @@ function generate_winning_numbers() {
     console.log(user_money)
     $('.box').off("click");
     $('.play').off("click");
-    //$('.play').off("click");
+    $('.erase').off("click");
+    $('.quick').off("click");
     $('.box').removeClass('selected');
     let winning_numbers = [];
     while (winning_numbers.length < 20) {
@@ -56,10 +59,8 @@ function generate_winning_numbers() {
         }
     }
     console.log(winning_numbers)
-
     select_winning_numbers(winning_numbers);
 
-    //console.log(winning_numbers.sort(function (a, b) { return a - b }))
 }
 
 function select_winning_numbers(array) {
@@ -259,8 +260,18 @@ function check_winnings(array) {
     console.log(correct_match + '/' + user_numbers.length)
     console.log(user_money)
     render_DOM();
-    $('.box').on('click', picked_number);
-    $('.play').on('click', generate_winning_numbers);
+    assign_click_handler();
+}
+
+function erase_picks() {
+    $('.box').removeClass('picked');
+}
+
+function quick_pick() {
+    erase_picks();
+    user_count = 0
+    user_numbers = [];
+
 }
 
 function render_DOM() {
