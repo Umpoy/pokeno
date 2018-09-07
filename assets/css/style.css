@@ -2,15 +2,20 @@
     box-sizing: border-box;
 }
 
-/* body {
-    
-} */
+body {
+    background: url('https://wallup.net/wp-content/uploads/2016/05/24/143432-nature-Pokemon-748x468.jpg') no-repeat center center fixed;
+	background-size: cover;
+}
+
+.logo img{
+    height: 10vw;
+}
 
 .game {
     flex-direction: row;
     flex-wrap: wrap;
-    height: 50vh;
-    width: 60vw;
+    height: 50%;
+    width: 50%;
     position: absolute;
     top: 50%;
     left: 50%;
