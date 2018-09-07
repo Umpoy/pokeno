@@ -7,6 +7,7 @@ $(document).ready(initialize);
 function initialize() {
     create_board();
     assign_click_handler();
+    render_DOM();
 }
 
 function create_board() {
@@ -41,8 +42,10 @@ function generate_winning_numbers() {
         return
     }
     user_money--
+    render_DOM();
     console.log(user_money)
     $('.box').off("click");
+    $('.play').off("click");
     //$('.play').off("click");
     $('.box').removeClass('selected');
     let winning_numbers = [];
@@ -75,7 +78,6 @@ function select_winning_numbers(array) {
 }
 
 function check_winnings(array) {
-
     let correct_match = 0;
     for (let i = 0; i < user_numbers.length; i++) {
         if (array.includes(parseInt(user_numbers[i]))) {
@@ -256,4 +258,11 @@ function check_winnings(array) {
     }
     console.log(correct_match + '/' + user_numbers.length)
     console.log(user_money)
+    render_DOM();
+    $('.box').on('click', picked_number);
+    $('.play').on('click', generate_winning_numbers);
+}
+
+function render_DOM() {
+    $('.credit_span').html(user_money);
 }

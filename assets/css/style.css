@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: Pokemon;
-    src: url('../fonts/Pokemon Hollow.ttf');
+    src: url('../fonts/Pokemon Solid.ttf');
 }
 
 body {
@@ -13,8 +13,27 @@ body {
     font-family: Pokemon;
 }
 
-.logo img{
-    height: 10vw;
+.logo {
+    margin-top: 1%;
+}
+
+h1 {
+    /* #405AA0 */
+    color: #F8CC46;
+    -webkit-text-stroke: 1px #405AA0;
+  
+    text-shadow:
+        3px 3px 0 #405AA0,
+      -1px -1px 0 #405AA0,  
+       1px -1px 0 #405AA0,
+       -1px 1px 0 #405AA0,
+        1px 1px 0 #405AA0; 
+    
+}
+
+.credit {
+   right: 5%;
+   position: absolute;
 }
 
 .game {
@@ -45,12 +64,13 @@ body {
 }
 
 .footer {
-    position: absolute;
+    text-align: center;
     bottom: 0%;
+    position: absolute;
     width: 100%;
 }
 
-.footer div {
+/* .footer div {
     display: inline-block;
     min-width: 33%;
 }
@@ -58,4 +78,4 @@ body {
 .footer img{
     width: inherit;
     cursor: pointer;
-}
+}  */
