@@ -75,7 +75,10 @@ function select_winning_numbers(array) {
         $('.box:nth-child(' + hold_array[0] + ')').addClass('selected')
         hold_array.shift();
     }, 100)
-
+    $('.box').on('click', picked_number);
+    $('.play').on('click', generate_winning_numbers);
+    $('.erase').on('click', erase_picks);
+    $('.quick').on('click', quick_pick);
 }
 
 function check_winnings(array) {
@@ -260,7 +263,7 @@ function check_winnings(array) {
     console.log(correct_match + '/' + user_numbers.length)
     console.log(user_money)
     render_DOM();
-    assign_click_handler();
+
 }
 
 function erase_picks() {
