@@ -184,6 +184,53 @@ function check_winnings(array) {
                     break;
             }
             break;
+        case 9:
+            switch (correct_match) {
+                case 4:
+                    user_money += 2
+                    break;
+                case 5:
+                    user_money += 4
+                    break;
+                case 6:
+                    user_money += 8
+                    break;
+                case 7:
+                    user_money += 20
+                    break;
+                case 8:
+                    user_money += 80
+                    break;
+                case 9:
+                    user_money += 1200
+                    break;
+            }
+            break;
+        case 10:
+            switch (correct_match) {
+                case 4:
+                    user_money += 2
+                    break;
+                case 5:
+                    user_money += 3
+                    break;
+                case 6:
+                    user_money += 5
+                    break;
+                case 7:
+                    user_money += 10
+                    break;
+                case 8:
+                    user_money += 30
+                    break;
+                case 9:
+                    user_money += 600
+                    break;
+                case 10:
+                    user_money += 1800
+                    break;
+            }
+            break;
     }
     console.log(correct_match + '/' + user_numbers.length)
     console.log(user_money)
