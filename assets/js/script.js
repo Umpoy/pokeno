@@ -95,10 +95,15 @@ function check_winnings(array) {
         case 2:
             if (correct_match == 2) {
                 user_money += 9
+            } else {
+                user_money += 1
             }
             break;
         case 3:
             switch (correct_match) {
+                case 1:
+                    user_money += 1
+                    break;
                 case 2:
                     user_money += 2
                     break;
@@ -122,6 +127,9 @@ function check_winnings(array) {
             break;
         case 5:
             switch (correct_match) {
+                case 2:
+                    user_money += 1
+                    break;
                 case 3:
                     user_money += 3
                     break;
@@ -135,6 +143,8 @@ function check_winnings(array) {
             break;
         case 6:
             switch (correct_match) {
+                case 2:
+                    user_money += 1
                 case 3:
                     user_money += 2
                     break;
@@ -151,6 +161,9 @@ function check_winnings(array) {
             break;
         case 7:
             switch (correct_match) {
+                case 3:
+                    user_money += 1
+                    break;
                 case 4:
                     user_money += 6
                     break;
@@ -167,6 +180,9 @@ function check_winnings(array) {
             break;
         case 8:
             switch (correct_match) {
+                case 3:
+                    user_money += 1
+                    break;
                 case 4:
                     user_money += 3
                     break;
@@ -186,6 +202,9 @@ function check_winnings(array) {
             break;
         case 9:
             switch (correct_match) {
+                case 3:
+                    user_money += 1
+                    break;
                 case 4:
                     user_money += 2
                     break;
@@ -208,6 +227,9 @@ function check_winnings(array) {
             break;
         case 10:
             switch (correct_match) {
+                case 3:
+                    user_money += 1
+                    break;
                 case 4:
                     user_money += 2
                     break;
