@@ -264,13 +264,32 @@ function check_winnings(array) {
 }
 
 function erase_picks() {
+    user_count = 0
+    user_numbers = [];
     $('.box').removeClass('picked');
 }
 
 function quick_pick() {
     erase_picks();
-    user_count = 0
-    user_numbers = [];
+    let hold_num = Math.ceil(Math.random() * 10);
+    let hold_array = [];
+    while (hold_array.length !== hold_num) {
+        let hold = Math.ceil(Math.random() * 80)
+        if (!hold_array.includes(hold)) {
+            hold_array.push(hold);
+        }
+    }
+    user_numbers = hold_array.slice();
+    user_count = hold_num;
+    const interval = setInterval(function () {
+        if (hold_array.length === 0) {
+            clearInterval(interval);
+            return
+        }
+        $('.box:nth-child(' + hold_array[0] + ')').addClass('picked')
+        hold_array.shift();
+    }, 100)
+
 }
 
 function give_credit() {
