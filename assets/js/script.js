@@ -91,6 +91,100 @@ function check_winnings(array) {
             if (correct_match == 1) {
                 user_money += 3
             }
+            break;
+        case 2:
+            if (correct_match == 2) {
+                user_money += 9
+            }
+            break;
+        case 3:
+            switch (correct_match) {
+                case 2:
+                    user_money += 2
+                    break;
+                case 3:
+                    user_money += 16
+                    break;
+            }
+            break;
+        case 4:
+            switch (correct_match) {
+                case 2:
+                    user_money += 2
+                    break;
+                case 3:
+                    user_money += 6
+                    break;
+                case 4:
+                    user_money += 12
+                    break;
+            }
+            break;
+        case 5:
+            switch (correct_match) {
+                case 3:
+                    user_money += 3
+                    break;
+                case 4:
+                    user_money += 15
+                    break;
+                case 5:
+                    user_money += 50
+                    break;
+            }
+            break;
+        case 6:
+            switch (correct_match) {
+                case 3:
+                    user_money += 2
+                    break;
+                case 4:
+                    user_money += 3
+                    break;
+                case 5:
+                    user_money += 30
+                    break;
+                case 6:
+                    user_money += 75
+                    break;
+            }
+            break;
+        case 7:
+            switch (correct_match) {
+                case 4:
+                    user_money += 6
+                    break;
+                case 5:
+                    user_money += 12
+                    break;
+                case 6:
+                    user_money += 36
+                    break;
+                case 7:
+                    user_money += 100
+                    break;
+            }
+            break;
+        case 8:
+            switch (correct_match) {
+                case 4:
+                    user_money += 3
+                    break;
+                case 5:
+                    user_money += 6
+                    break;
+                case 6:
+                    user_money += 19
+                    break;
+                case 7:
+                    user_money += 90
+                    break;
+                case 8:
+                    user_money += 720
+                    break;
+            }
+            break;
     }
+    console.log(correct_match + '/' + user_numbers.length)
     console.log(user_money)
 }
