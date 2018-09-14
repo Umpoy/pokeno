@@ -94,9 +94,7 @@ function check_winnings(array) {
 
     switch (user_numbers.length) {
         case 1:
-            if (correct_match == 1) {
-                user_money += 3
-            }
+            user_money += 3
             break;
         case 2:
             if (correct_match == 2) {
