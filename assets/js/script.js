@@ -75,10 +75,12 @@ function select_winning_numbers(array) {
         $('.box:nth-child(' + hold_array[0] + ')').addClass('selected')
         hold_array.shift();
     }, 100)
-    $('.box').on('click', picked_number);
-    $('.play').on('click', generate_winning_numbers);
-    $('.erase').on('click', erase_picks);
-    $('.quick').on('click', quick_pick);
+    setTimeout(function () {
+        $('.box').on('click', picked_number);
+        $('.play').on('click', generate_winning_numbers);
+        $('.erase').on('click', erase_picks);
+        $('.quick').on('click', quick_pick);
+    }, 2000);
 }
 
 function check_winnings(array) {
