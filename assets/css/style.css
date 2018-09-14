@@ -146,6 +146,9 @@ and (orientation: landscape) {
     .header {
         margin-top: 0;
     }
+    .game {
+        margin-bottom: 2vh;
+    }
 }
 
 /* ----------- iPhone 6+, 7+ and 8+ ----------- */
