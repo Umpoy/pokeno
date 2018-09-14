@@ -16,9 +16,12 @@ body {
     font-family: Pokemon;
 }
 
-.logo h1{
-    margin-top: 1%;
-    display: inline;
+.header {
+    margin-top: 10vh;
+}
+
+.header * {
+    text-align: center;
 }
 
 h1 {
@@ -34,10 +37,10 @@ h1 {
         1px 1px 0 #405AA0; 
 }
 
-.credit {
+/* .credit {
    right: 5%;
    position: absolute;
-}
+} */
 
 .game {
     flex-direction: row;
