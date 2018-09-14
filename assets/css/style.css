@@ -147,9 +147,9 @@ and (orientation: landscape) {
         margin-top: 0;
     }
     .game {
-        margin-bottom: 2vh;
+        height: 40%;
+        width: 40%;
     }
-}
 
 /* ----------- iPhone 6+, 7+ and 8+ ----------- */
 
@@ -163,8 +163,7 @@ and (orientation: portrait) {
         height: 40%;
         width: 100%;
         margin-left: 1%;
-        height: 40%;
-        width: 40%;
+        
     }
 }
 
