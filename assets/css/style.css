@@ -144,11 +144,12 @@ and (max-device-width: 667px)
 and (-webkit-min-device-pixel-ratio: 2)
 and (orientation: landscape) { 
     .header {
-        margin-top: 5%;
+        margin-top: 1%;
     }
     .game {
-        height: 40%;
-        width: 40%;
+        top: 48%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 
 /* ----------- iPhone 6+, 7+ and 8+ ----------- */
