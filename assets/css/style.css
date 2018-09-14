@@ -38,11 +38,6 @@ h1 {
         1px 1px 0 #405AA0; 
 }
 
-/* .credit {
-   right: 5%;
-   position: absolute;
-} */
-
 .game {
     flex-direction: row;
     flex-wrap: wrap;
@@ -148,7 +143,9 @@ and (min-device-width: 375px)
 and (max-device-width: 667px) 
 and (-webkit-min-device-pixel-ratio: 2)
 and (orientation: landscape) { 
-
+    .header {
+        margin-top: 0;
+    }
 }
 
 /* ----------- iPhone 6+, 7+ and 8+ ----------- */
