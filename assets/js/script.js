@@ -96,169 +96,169 @@ function check_winnings(array) {
     if (correct_match === 0) {
         return
     }
-
+    debugger
     switch (user_numbers.length) {
         case 1:
-            localStorage.credits += 3
+            localStorage.credits = parseInt(localStorage.credits) + 3
             break;
         case 2:
             if (correct_match == 2) {
-                localStorage.credits += 9
+                localStorage.credits = parseInt(localStorage.credits) + 9
             } else {
-                localStorage.credits += 1
+                localStorage.credits = parseInt(localStorage.credits) + 1
             }
             break;
         case 3:
             switch (correct_match) {
                 case 1:
-                    localStorage.credits += 1
+                    localStorage.credits = parseInt(localStorage.credits) + 1
                     break;
                 case 2:
-                    localStorage.credits += 2
+                    localStorage.credits = parseInt(localStorage.credits) + 2
                     break;
                 case 3:
-                    localStorage.credits += 16
+                    localStorage.credits = parseInt(localStorage.credits) + 16
                     break;
             }
             break;
         case 4:
             switch (correct_match) {
                 case 2:
-                    localStorage.credits += 2
+                    localStorage.credits = parseInt(localStorage.credits) + 2
                     break;
                 case 3:
-                    localStorage.credits += 6
+                    localStorage.credits = parseInt(localStorage.credits) + 6
                     break;
                 case 4:
-                    localStorage.credits += 12
+                    localStorage.credits = parseInt(localStorage.credits) + 12
                     break;
             }
             break;
         case 5:
             switch (correct_match) {
                 case 2:
-                    localStorage.credits += 1
+                    localStorage.credits = parseInt(localStorage.credits) + 1
                     break;
                 case 3:
-                    localStorage.credits += 3
+                    localStorage.credits = parseInt(localStorage.credits) + 3
                     break;
                 case 4:
-                    localStorage.credits += 15
+                    localStorage.credits = parseInt(localStorage.credits) + 15
                     break;
                 case 5:
-                    localStorage.credits += 50
+                    localStorage.credits = parseInt(localStorage.credits) + 50
                     break;
             }
             break;
         case 6:
             switch (correct_match) {
                 case 2:
-                    localStorage.credits += 1
+                    localStorage.credits = parseInt(localStorage.credits) + 1
                 case 3:
-                    localStorage.credits += 2
+                    localStorage.credits = parseInt(localStorage.credits) + 2
                     break;
                 case 4:
-                    localStorage.credits += 3
+                    localStorage.credits = parseInt(localStorage.credits) + 3
                     break;
                 case 5:
-                    localStorage.credits += 30
+                    localStorage.credits = parseInt(localStorage.credits) + 30
                     break;
                 case 6:
-                    localStorage.credits += 75
+                    localStorage.credits = parseInt(localStorage.credits) + 75
                     break;
             }
             break;
         case 7:
             switch (correct_match) {
                 case 3:
-                    localStorage.credits += 1
+                    localStorage.credits = parseInt(localStorage.credits) + 1
                     break;
                 case 4:
-                    localStorage.credits += 6
+                    localStorage.credits = parseInt(localStorage.credits) + 6
                     break;
                 case 5:
-                    localStorage.credits += 12
+                    localStorage.credits = parseInt(localStorage.credits) + 12
                     break;
                 case 6:
-                    localStorage.credits += 36
+                    localStorage.credits = parseInt(localStorage.credits) + 36
                     break;
                 case 7:
-                    localStorage.credits += 100
+                    localStorage.credits = parseInt(localStorage.credits) + 100
                     break;
             }
             break;
         case 8:
             switch (correct_match) {
                 case 3:
-                    localStorage.credits += 1
+                    localStorage.credits = parseInt(localStorage.credits) + 1
                     break;
                 case 4:
-                    localStorage.credits += 3
+                    localStorage.credits = parseInt(localStorage.credits) + 3
                     break;
                 case 5:
-                    localStorage.credits += 6
+                    localStorage.credits = parseInt(localStorage.credits) + 6
                     break;
                 case 6:
-                    localStorage.credits += 19
+                    localStorage.credits = parseInt(localStorage.credits) + 19
                     break;
                 case 7:
-                    localStorage.credits += 90
+                    localStorage.credits = parseInt(localStorage.credits) + 90
                     break;
                 case 8:
-                    localStorage.credits += 720
+                    localStorage.credits = parseInt(localStorage.credits) + 720
                     break;
             }
             break;
         case 9:
             switch (correct_match) {
                 case 3:
-                    localStorage.credits += 1
+                    localStorage.credits = parseInt(localStorage.credits) + 1
                     break;
                 case 4:
-                    localStorage.credits += 2
+                    localStorage.credits = parseInt(localStorage.credits) + 2
                     break;
                 case 5:
-                    localStorage.credits += 4
+                    localStorage.credits = parseInt(localStorage.credits) + 4
                     break;
                 case 6:
-                    localStorage.credits += 8
+                    localStorage.credits = parseInt(localStorage.credits) + 8
                     break;
                 case 7:
-                    localStorage.credits += 20
+                    localStorage.credits = parseInt(localStorage.credits) + 20
                     break;
                 case 8:
-                    localStorage.credits += 80
+                    localStorage.credits = parseInt(localStorage.credits) + 80
                     break;
                 case 9:
-                    localStorage.credits += 1200
+                    localStorage.credits = parseInt(localStorage.credits) + 1200
                     break;
             }
             break;
         case 10:
             switch (correct_match) {
                 case 3:
-                    localStorage.credits += 1
+                    localStorage.credits = parseInt(localStorage.credits) + 1
                     break;
                 case 4:
-                    localStorage.credits += 2
+                    localStorage.credits = parseInt(localStorage.credits) + 2
                     break;
                 case 5:
-                    localStorage.credits += 3
+                    localStorage.credits = parseInt(localStorage.credits) + 3
                     break;
                 case 6:
-                    localStorage.credits += 5
+                    localStorage.credits = parseInt(localStorage.credits) + 5
                     break;
                 case 7:
-                    localStorage.credits += 10
+                    localStorage.credits = parseInt(localStorage.credits) + 10
                     break;
                 case 8:
-                    localStorage.credits += 30
+                    localStorage.credits = parseInt(localStorage.credits) + 30
                     break;
                 case 9:
-                    localStorage.credits += 600
+                    localStorage.credits = parseInt(localStorage.credits) + 600
                     break;
                 case 10:
-                    localStorage.credits += 1800
+                    localStorage.credits = parseInt(localStorage.credits) + 1800
                     break;
             }
             break;
