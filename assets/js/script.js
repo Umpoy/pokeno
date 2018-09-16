@@ -1,6 +1,5 @@
 let user_count = 0
 let user_numbers = [];
-let user_money = 10
 
 $(document).ready(initialize);
 
@@ -9,6 +8,7 @@ function initialize() {
     assign_click_handler();
     render_DOM();
     give_credit();
+
 }
 
 function create_board() {
@@ -22,6 +22,9 @@ function assign_click_handler() {
     $('.play').on('click', generate_winning_numbers);
     $('.erase').on('click', erase_picks);
     $('.quick').on('click', quick_pick);
+    if (!localStorage.credits) {
+        localStorage.setItem("credits", 10)
+    }
 }
 
 function picked_number() {
@@ -41,12 +44,12 @@ function picked_number() {
 }
 
 function generate_winning_numbers() {
-    if (user_money == 0 || user_numbers.length == 0) {
+    if (localStorage.credits == 0 || user_numbers.length == 0) {
         return
     }
-    user_money--
+    localStorage.credits--
     render_DOM();
-    console.log(user_money)
+    console.log(localStorage.credits)
     $('.box').off("click");
     $('.play').off("click");
     $('.erase').off("click");
@@ -96,172 +99,172 @@ function check_winnings(array) {
 
     switch (user_numbers.length) {
         case 1:
-            user_money += 3
+            localStorage.credits += 3
             break;
         case 2:
             if (correct_match == 2) {
-                user_money += 9
+                localStorage.credits += 9
             } else {
-                user_money += 1
+                localStorage.credits += 1
             }
             break;
         case 3:
             switch (correct_match) {
                 case 1:
-                    user_money += 1
+                    localStorage.credits += 1
                     break;
                 case 2:
-                    user_money += 2
+                    localStorage.credits += 2
                     break;
                 case 3:
-                    user_money += 16
+                    localStorage.credits += 16
                     break;
             }
             break;
         case 4:
             switch (correct_match) {
                 case 2:
-                    user_money += 2
+                    localStorage.credits += 2
                     break;
                 case 3:
-                    user_money += 6
+                    localStorage.credits += 6
                     break;
                 case 4:
-                    user_money += 12
+                    localStorage.credits += 12
                     break;
             }
             break;
         case 5:
             switch (correct_match) {
                 case 2:
-                    user_money += 1
+                    localStorage.credits += 1
                     break;
                 case 3:
-                    user_money += 3
+                    localStorage.credits += 3
                     break;
                 case 4:
-                    user_money += 15
+                    localStorage.credits += 15
                     break;
                 case 5:
-                    user_money += 50
+                    localStorage.credits += 50
                     break;
             }
             break;
         case 6:
             switch (correct_match) {
                 case 2:
-                    user_money += 1
+                    localStorage.credits += 1
                 case 3:
-                    user_money += 2
+                    localStorage.credits += 2
                     break;
                 case 4:
-                    user_money += 3
+                    localStorage.credits += 3
                     break;
                 case 5:
-                    user_money += 30
+                    localStorage.credits += 30
                     break;
                 case 6:
-                    user_money += 75
+                    localStorage.credits += 75
                     break;
             }
             break;
         case 7:
             switch (correct_match) {
                 case 3:
-                    user_money += 1
+                    localStorage.credits += 1
                     break;
                 case 4:
-                    user_money += 6
+                    localStorage.credits += 6
                     break;
                 case 5:
-                    user_money += 12
+                    localStorage.credits += 12
                     break;
                 case 6:
-                    user_money += 36
+                    localStorage.credits += 36
                     break;
                 case 7:
-                    user_money += 100
+                    localStorage.credits += 100
                     break;
             }
             break;
         case 8:
             switch (correct_match) {
                 case 3:
-                    user_money += 1
+                    localStorage.credits += 1
                     break;
                 case 4:
-                    user_money += 3
+                    localStorage.credits += 3
                     break;
                 case 5:
-                    user_money += 6
+                    localStorage.credits += 6
                     break;
                 case 6:
-                    user_money += 19
+                    localStorage.credits += 19
                     break;
                 case 7:
-                    user_money += 90
+                    localStorage.credits += 90
                     break;
                 case 8:
-                    user_money += 720
+                    localStorage.credits += 720
                     break;
             }
             break;
         case 9:
             switch (correct_match) {
                 case 3:
-                    user_money += 1
+                    localStorage.credits += 1
                     break;
                 case 4:
-                    user_money += 2
+                    localStorage.credits += 2
                     break;
                 case 5:
-                    user_money += 4
+                    localStorage.credits += 4
                     break;
                 case 6:
-                    user_money += 8
+                    localStorage.credits += 8
                     break;
                 case 7:
-                    user_money += 20
+                    localStorage.credits += 20
                     break;
                 case 8:
-                    user_money += 80
+                    localStorage.credits += 80
                     break;
                 case 9:
-                    user_money += 1200
+                    localStorage.credits += 1200
                     break;
             }
             break;
         case 10:
             switch (correct_match) {
                 case 3:
-                    user_money += 1
+                    localStorage.credits += 1
                     break;
                 case 4:
-                    user_money += 2
+                    localStorage.credits += 2
                     break;
                 case 5:
-                    user_money += 3
+                    localStorage.credits += 3
                     break;
                 case 6:
-                    user_money += 5
+                    localStorage.credits += 5
                     break;
                 case 7:
-                    user_money += 10
+                    localStorage.credits += 10
                     break;
                 case 8:
-                    user_money += 30
+                    localStorage.credits += 30
                     break;
                 case 9:
-                    user_money += 600
+                    localStorage.credits += 600
                     break;
                 case 10:
-                    user_money += 1800
+                    localStorage.credits += 1800
                     break;
             }
             break;
     }
     console.log(correct_match + '/' + user_numbers.length)
-    console.log(user_money)
+    console.log(localStorage.credits)
     render_DOM();
 
 }
@@ -297,11 +300,11 @@ function quick_pick() {
 
 function give_credit() {
     setInterval(function () {
-        user_money++;
+        localStorage.credits++;
         render_DOM();
     }, 60000)
 }
 
 function render_DOM() {
-    $('.credit_span').html(user_money);
+    $('.credit_span').html(localStorage.credits);
 }

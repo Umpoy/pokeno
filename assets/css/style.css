@@ -147,7 +147,7 @@ and (orientation: landscape) {
         margin-top: 1%;
     }
     .game {
-        top: 48%;
+        top: 47%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
