@@ -1,5 +1,5 @@
 let user_count = 0;
-let current_bet = 4;
+let current_bet = 1;
 let user_numbers = [];
 
 $(document).ready(initialize);
@@ -23,6 +23,7 @@ function assign_click_handler() {
     $('.play').on('click', generate_winning_numbers);
     $('.erase').on('click', erase_picks);
     $('.quick').on('click', quick_pick);
+    $('.bet').on('click', change_bet);
     if (!localStorage.credits) {
         localStorage.setItem("credits", 10)
     }
@@ -33,25 +34,21 @@ function picked_number() {
         user_count--
         $(this).removeClass('picked');
         user_numbers.splice(user_numbers[user_numbers.indexOf($(this).html)], 1)
-        console.log(user_numbers)
         return
     }
     if (user_count < 10) {
         user_count++
         $(this).addClass('picked')
         user_numbers.push($(this).html());
-        console.log(user_numbers)
     }
 }
 
 function generate_winning_numbers() {
-    console.log(current_bet)
-    if ((localStorage.credits - current_bet) < 0 || user_numbers.length == 0) {
+    if (localStorage.credits == 0 || user_numbers.length == 0 || current_bet > localStorage.credits) {
         return
     }
-    localStorage.credits -= localStorage.credits - current_bet
+    localStorage.credits -= current_bet
     render_DOM();
-    console.log(localStorage.credits)
     $('.box').off("click");
     $('.play').off("click");
     $('.erase').off("click");
@@ -64,7 +61,6 @@ function generate_winning_numbers() {
             winning_numbers.push(hold);
         }
     }
-    console.log(winning_numbers)
     select_winning_numbers(winning_numbers);
 
 }
@@ -98,7 +94,6 @@ function check_winnings(array) {
     if (correct_match === 0) {
         return
     }
-    debugger
     switch (user_numbers.length) {
         case 1:
             localStorage.credits = parseInt(localStorage.credits) + (3 * current_bet);
@@ -265,8 +260,6 @@ function check_winnings(array) {
             }
             break;
     }
-    console.log(correct_match + '/' + user_numbers.length)
-    console.log(localStorage.credits)
     render_DOM();
 
 }
@@ -307,6 +300,16 @@ function give_credit() {
     }, 60000)
 }
 
+function change_bet() {
+    if (current_bet == 5) {
+        current_bet = 1
+    } else {
+        current_bet++
+    }
+    render_DOM();
+}
+
 function render_DOM() {
     $('.credit_span').html(localStorage.credits);
+    $('.currentBet').html(current_bet);
 }
