@@ -301,7 +301,7 @@ function give_credit() {
 }
 
 function change_bet() {
-    if (current_bet == 5) {
+    if (current_bet == 10) {
         current_bet = 1
     } else {
         current_bet++
