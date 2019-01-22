@@ -1,4 +1,5 @@
-let user_count = 0
+let user_count = 0;
+let current_bet = 4;
 let user_numbers = [];
 
 $(document).ready(initialize);
@@ -44,10 +45,11 @@ function picked_number() {
 }
 
 function generate_winning_numbers() {
-    if (localStorage.credits == 0 || user_numbers.length == 0) {
+    console.log(current_bet)
+    if ((localStorage.credits - current_bet) < 0 || user_numbers.length == 0) {
         return
     }
-    localStorage.credits--
+    localStorage.credits -= localStorage.credits - current_bet
     render_DOM();
     console.log(localStorage.credits)
     $('.box').off("click");
@@ -99,166 +101,166 @@ function check_winnings(array) {
     debugger
     switch (user_numbers.length) {
         case 1:
-            localStorage.credits = parseInt(localStorage.credits) + 3
+            localStorage.credits = parseInt(localStorage.credits) + (3 * current_bet);
             break;
         case 2:
             if (correct_match == 2) {
-                localStorage.credits = parseInt(localStorage.credits) + 9
+                localStorage.credits = parseInt(localStorage.credits) + (9 * current_bet);
             } else {
-                localStorage.credits = parseInt(localStorage.credits) + 1
+                localStorage.credits = parseInt(localStorage.credits) + (1 * current_bet);
             }
             break;
         case 3:
             switch (correct_match) {
                 case 1:
-                    localStorage.credits = parseInt(localStorage.credits) + 1
+                    localStorage.credits = parseInt(localStorage.credits) + (1 * current_bet);
                     break;
                 case 2:
-                    localStorage.credits = parseInt(localStorage.credits) + 2
+                    localStorage.credits = parseInt(localStorage.credits) + (2 * current_bet);
                     break;
                 case 3:
-                    localStorage.credits = parseInt(localStorage.credits) + 16
+                    localStorage.credits = parseInt(localStorage.credits) + (16 * current_bet);
                     break;
             }
             break;
         case 4:
             switch (correct_match) {
                 case 2:
-                    localStorage.credits = parseInt(localStorage.credits) + 2
+                    localStorage.credits = parseInt(localStorage.credits) + (2 * current_bet);
                     break;
                 case 3:
-                    localStorage.credits = parseInt(localStorage.credits) + 6
+                    localStorage.credits = parseInt(localStorage.credits) + (6 * current_bet);
                     break;
                 case 4:
-                    localStorage.credits = parseInt(localStorage.credits) + 12
+                    localStorage.credits = parseInt(localStorage.credits) + (12 * current_bet);
                     break;
             }
             break;
         case 5:
             switch (correct_match) {
                 case 2:
-                    localStorage.credits = parseInt(localStorage.credits) + 1
+                    localStorage.credits = parseInt(localStorage.credits) + (1 * current_bet);
                     break;
                 case 3:
-                    localStorage.credits = parseInt(localStorage.credits) + 3
+                    localStorage.credits = parseInt(localStorage.credits) + (3 * current_bet);
                     break;
                 case 4:
-                    localStorage.credits = parseInt(localStorage.credits) + 15
+                    localStorage.credits = parseInt(localStorage.credits) + (15 * current_bet);
                     break;
                 case 5:
-                    localStorage.credits = parseInt(localStorage.credits) + 50
+                    localStorage.credits = parseInt(localStorage.credits) + (50 * current_bet);
                     break;
             }
             break;
         case 6:
             switch (correct_match) {
                 case 2:
-                    localStorage.credits = parseInt(localStorage.credits) + 1
+                    localStorage.credits = parseInt(localStorage.credits) + (1 * current_bet);
                 case 3:
-                    localStorage.credits = parseInt(localStorage.credits) + 2
+                    localStorage.credits = parseInt(localStorage.credits) + (2 * current_bet);
                     break;
                 case 4:
-                    localStorage.credits = parseInt(localStorage.credits) + 3
+                    localStorage.credits = parseInt(localStorage.credits) + (3 * current_bet);
                     break;
                 case 5:
-                    localStorage.credits = parseInt(localStorage.credits) + 30
+                    localStorage.credits = parseInt(localStorage.credits) + (30 * current_bet);
                     break;
                 case 6:
-                    localStorage.credits = parseInt(localStorage.credits) + 75
+                    localStorage.credits = parseInt(localStorage.credits) + (75 * current_bet);
                     break;
             }
             break;
         case 7:
             switch (correct_match) {
                 case 3:
-                    localStorage.credits = parseInt(localStorage.credits) + 1
+                    localStorage.credits = parseInt(localStorage.credits) + (1 * current_bet);
                     break;
                 case 4:
-                    localStorage.credits = parseInt(localStorage.credits) + 6
+                    localStorage.credits = parseInt(localStorage.credits) + (6 * current_bet);
                     break;
                 case 5:
-                    localStorage.credits = parseInt(localStorage.credits) + 12
+                    localStorage.credits = parseInt(localStorage.credits) + (12 * current_bet);
                     break;
                 case 6:
-                    localStorage.credits = parseInt(localStorage.credits) + 36
+                    localStorage.credits = parseInt(localStorage.credits) + (36 * current_bet);
                     break;
                 case 7:
-                    localStorage.credits = parseInt(localStorage.credits) + 100
+                    localStorage.credits = parseInt(localStorage.credits) + (100 * current_bet);
                     break;
             }
             break;
         case 8:
             switch (correct_match) {
                 case 3:
-                    localStorage.credits = parseInt(localStorage.credits) + 1
+                    localStorage.credits = parseInt(localStorage.credits) + (1 * current_bet);
                     break;
                 case 4:
-                    localStorage.credits = parseInt(localStorage.credits) + 3
+                    localStorage.credits = parseInt(localStorage.credits) + (3 * current_bet);
                     break;
                 case 5:
-                    localStorage.credits = parseInt(localStorage.credits) + 6
+                    localStorage.credits = parseInt(localStorage.credits) + (6 * current_bet);
                     break;
                 case 6:
-                    localStorage.credits = parseInt(localStorage.credits) + 19
+                    localStorage.credits = parseInt(localStorage.credits) + (19 * current_bet);
                     break;
                 case 7:
-                    localStorage.credits = parseInt(localStorage.credits) + 90
+                    localStorage.credits = parseInt(localStorage.credits) + (90 * current_bet);
                     break;
                 case 8:
-                    localStorage.credits = parseInt(localStorage.credits) + 720
+                    localStorage.credits = parseInt(localStorage.credits) + (720 * current_bet);
                     break;
             }
             break;
         case 9:
             switch (correct_match) {
                 case 3:
-                    localStorage.credits = parseInt(localStorage.credits) + 1
+                    localStorage.credits = parseInt(localStorage.credits) + (1 * current_bet);
                     break;
                 case 4:
-                    localStorage.credits = parseInt(localStorage.credits) + 2
+                    localStorage.credits = parseInt(localStorage.credits) + (2 * current_bet);
                     break;
                 case 5:
-                    localStorage.credits = parseInt(localStorage.credits) + 4
+                    localStorage.credits = parseInt(localStorage.credits) + (4 * current_bet);
                     break;
                 case 6:
-                    localStorage.credits = parseInt(localStorage.credits) + 8
+                    localStorage.credits = parseInt(localStorage.credits) + (8 * current_bet);
                     break;
                 case 7:
-                    localStorage.credits = parseInt(localStorage.credits) + 20
+                    localStorage.credits = parseInt(localStorage.credits) + (20 * current_bet);
                     break;
                 case 8:
-                    localStorage.credits = parseInt(localStorage.credits) + 80
+                    localStorage.credits = parseInt(localStorage.credits) + (80 * current_bet);
                     break;
                 case 9:
-                    localStorage.credits = parseInt(localStorage.credits) + 1200
+                    localStorage.credits = parseInt(localStorage.credits) + (1200 * current_bet);
                     break;
             }
             break;
         case 10:
             switch (correct_match) {
                 case 3:
-                    localStorage.credits = parseInt(localStorage.credits) + 1
+                    localStorage.credits = parseInt(localStorage.credits) + (1 * current_bet);
                     break;
                 case 4:
-                    localStorage.credits = parseInt(localStorage.credits) + 2
+                    localStorage.credits = parseInt(localStorage.credits) + (2 * current_bet);
                     break;
                 case 5:
-                    localStorage.credits = parseInt(localStorage.credits) + 3
+                    localStorage.credits = parseInt(localStorage.credits) + (3 * current_bet);
                     break;
                 case 6:
-                    localStorage.credits = parseInt(localStorage.credits) + 5
+                    localStorage.credits = parseInt(localStorage.credits) + (5 * current_bet);
                     break;
                 case 7:
-                    localStorage.credits = parseInt(localStorage.credits) + 10
+                    localStorage.credits = parseInt(localStorage.credits) + (10 * current_bet);
                     break;
                 case 8:
-                    localStorage.credits = parseInt(localStorage.credits) + 30
+                    localStorage.credits = parseInt(localStorage.credits) + (30 * current_bet);
                     break;
                 case 9:
-                    localStorage.credits = parseInt(localStorage.credits) + 600
+                    localStorage.credits = parseInt(localStorage.credits) + (600 * current_bet);
                     break;
                 case 10:
-                    localStorage.credits = parseInt(localStorage.credits) + 1800
+                    localStorage.credits = parseInt(localStorage.credits) + (1800 * current_bet);
                     break;
             }
             break;
@@ -277,7 +279,7 @@ function erase_picks() {
 
 function quick_pick() {
     erase_picks();
-    let hold_num = Math.ceil(Math.random() * 10);
+    let hold_num = Math.ceil(Math.random() * (10 - 4));
     let hold_array = [];
     while (hold_array.length !== hold_num) {
         let hold = Math.ceil(Math.random() * 80)
